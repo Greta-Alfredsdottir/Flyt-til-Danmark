@@ -17,6 +17,11 @@
       "src": "/icon_72x72.png",
       "sizes": "72x72",
       "type": "image/png"
+    },
+     {
+      "src": "/icon_92x92.png",
+      "sizes": "92x92",
+      "type": "image/png"
     }
   ],
   "start_url": "./index.html",

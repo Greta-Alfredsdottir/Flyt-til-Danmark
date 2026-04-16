@@ -14,11 +14,22 @@ self.addEventListener('activate', event => {
 // Fetch
 // cache er åben
 
-self.addEventListener('fetch', event => {
-    caches.open('my-cache').then(function(cache){
+self.addEventListener('fetch', event => {// Kontroller svar på request
+	event.respondWith(
+		
+		// Kig efter file match i cache 
+		caches.match(event.request).then(cacheRes => {
+			// Returner match fra cache / hent fil på server
+			// ...
+		}).catch(() => {
+			// Hvis ovenstående giver fejl kaldes fallback siden			
+			return caches.match('/pages/fallback.html')
+		})
+	)
+    // caches.open('my-cache').then(function(cache){
 
-    });
-    console.log('Fetch event', event)
+    // });
+    // console.log('Fetch event', event)
     
 })
 const assets = [

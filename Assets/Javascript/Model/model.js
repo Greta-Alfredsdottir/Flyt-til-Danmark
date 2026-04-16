@@ -71,6 +71,6 @@ saveButton.addEventListener("click", ()=>{
 })
 
   }
-  document.getElementById("newListButton").addEventListener("click", () => {
+  document.getElementById("HuskeListeButton").addEventListener("click", () => {
     createInput();
   })
